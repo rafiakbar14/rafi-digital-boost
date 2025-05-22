@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { ArrowRight, PhoneCall } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import logoSvg from '../4_20250522_202405_0001.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,6 +13,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
           <div className="md:col-span-5">
             <div className="flex items-center mb-4">
+              <img src={logoSvg} alt="Rafi Design Logo" className="w-8 h-8 mr-2" />
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-blue-light to-white">
                 Rafi
               </span>
@@ -65,10 +68,10 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Tautan</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Beranda
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
@@ -107,12 +110,12 @@ const Footer = () => {
             © {currentYear} Rafi Design. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-500 hover:text-white transition-colors">
+            </Link>
+            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

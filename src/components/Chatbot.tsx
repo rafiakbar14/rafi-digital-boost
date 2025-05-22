@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import logoSvg from '../4_20250522_202405_0001.svg';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [messages, setMessages] = useState<{type: 'bot' | 'user', text: string}[]>([
     {
       type: 'bot',
@@ -15,6 +17,10 @@ const Chatbot = () => {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
+  };
+  
+  const closeChatbot = () => {
+    setIsVisible(false);
   };
 
   const handleSend = (e: React.FormEvent) => {
@@ -82,6 +88,8 @@ const Chatbot = () => {
     }
   }, [messages]);
 
+  if (!isVisible) return null;
+
   return (
     <>
       {/* Chat bubble button */}
@@ -93,7 +101,7 @@ const Chatbot = () => {
         onClick={toggleChat}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
-        <MessageCircle size={24} color="white" />
+        {isOpen ? <X size={24} color="white" /> : <MessageCircle size={24} color="white" />}
       </button>
       
       {/* Chat window */}
@@ -102,9 +110,21 @@ const Chatbot = () => {
         isOpen ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
       )}>
         {/* Chat header */}
-        <div className="bg-brand-blue text-white p-4">
-          <h3 className="font-medium">Asisten Virtual</h3>
-          <p className="text-xs opacity-80">Biasanya merespon dalam beberapa menit</p>
+        <div className="bg-brand-blue text-white p-4 flex justify-between items-center">
+          <div>
+            <div className="flex items-center gap-2">
+              <img src={logoSvg} alt="Rafi Design Logo" className="w-6 h-6" />
+              <h3 className="font-medium">Asisten Virtual</h3>
+            </div>
+            <p className="text-xs opacity-80">Biasanya merespon dalam beberapa menit</p>
+          </div>
+          <button 
+            onClick={closeChatbot}
+            className="p-1 hover:bg-blue-600 rounded-full transition-colors"
+            aria-label="Tutup chatbot"
+          >
+            <X size={16} />
+          </button>
         </div>
         
         {/* Chat messages */}

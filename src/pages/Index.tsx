@@ -7,6 +7,7 @@ import ServiceCard from '@/components/ServiceCard';
 import PriceCard from '@/components/PriceCard';
 import Chatbot from '@/components/Chatbot';
 import { ArrowRight, PhoneCall } from 'lucide-react';
+import logoSvg from '../4_20250522_202405_0001.svg';
 
 const Index = () => {
   return (
@@ -78,7 +79,7 @@ const Index = () => {
             </div>
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/wawEfYdpkag" 
+                src={logoSvg}
                 alt="Rafi - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto animate-fade-in md:scale-110"
               />
