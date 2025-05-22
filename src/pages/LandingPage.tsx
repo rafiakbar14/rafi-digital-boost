@@ -1,10 +1,13 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { ArrowRight, PhoneCall } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const LandingPage = () => {
+  // Define the WhatsApp message
+  const whatsappMessage = encodeURIComponent("Halo Saya berminat dengan Landing Page tolong bantu saya membuatnya, terima kasih 🙏");
+  
   // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
