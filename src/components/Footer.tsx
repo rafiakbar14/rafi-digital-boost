@@ -13,11 +13,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
           <div className="md:col-span-5">
             <div className="flex items-center mb-4">
-              <img src={logoSvg} alt="Rafi Design Logo" className="w-8 h-8 mr-2" />
+              <img 
+                src={logoSvg} 
+                alt="Cubicin Logo" 
+                className="w-8 h-8 mr-2" 
+                style={{filter: "invert(100%)"}} 
+              />
               <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-blue-light to-white">
-                Rafi
+                Cubicin
               </span>
-              <span className="font-medium text-gray-300 ml-1">Design</span>
             </div>
             <p className="text-gray-400 mb-6">
               Membantu UMKM go digital dan mengimplementasikan AI untuk efisiensi bisnis. Solusi digital yang profesional, cepat, dan terjangkau.
@@ -29,7 +33,7 @@ const Footer = () => {
               className="flex items-center gap-2 bg-white text-gray-900 hover:bg-gray-200 font-semibold py-2 px-4 rounded-lg transition-all duration-200 w-fit"
             >
               <PhoneCall size={18} />
-              <span>WhatsApp 083135183093</span>
+              <span>Hubungi via WhatsApp</span>
             </a>
           </div>
           
@@ -38,28 +42,28 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Layanan</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="#landing-page" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/landing-page" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Landing Page
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#website-custom" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/website-custom" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Website Custom
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#ecommerce" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/ecommerce" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     E-Commerce
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#digital-ads" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/digital-ads" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Digital Ads
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -107,13 +111,13 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 sm:mb-0">
-            © {currentYear} Rafi Design. All rights reserved.
+            © {currentYear} Cubicin. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
+            <Link to="/terms-of-service" className="text-gray-500 hover:text-white transition-colors">
               Terms of Service
             </Link>
           </div>

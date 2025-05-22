@@ -30,11 +30,11 @@ const Navbar = () => {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <img src={logoSvg} alt="Rafi Design Logo" className="w-8 h-8 mr-2" />
+            <img src={logoSvg} alt="Cubicin Logo" className="w-8 h-8 mr-2" style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} />
             <span className={cn(
               "text-xl font-bold transition-colors",
               isScrolled ? "text-brand-blue" : "text-gray-800"
-            )}>Rafi<span className="font-normal">Design</span></span>
+            )}>Cubicin</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -8,21 +8,22 @@ import PriceCard from '@/components/PriceCard';
 import Chatbot from '@/components/Chatbot';
 import { ArrowRight, PhoneCall } from 'lucide-react';
 import logoSvg from '../4_20250522_202405_0001.svg';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Rafi Design - Jasa Website & Digital Marketing di Samarinda</title>
+        <title>Cubicin - Jasa Website & Digital Marketing di Samarinda</title>
         <meta name="description" content="Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur. Profesional, cepat, dan terjangkau." />
         <meta name="keywords" content="jasa website samarinda, jasa landing page, web developer samarinda, digital marketing kalimantan, jasa pembuatan website" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Rafi Design - Jasa Website & Digital Marketing di Samarinda" />
+        <meta property="og:title" content="Cubicin - Jasa Website & Digital Marketing di Samarinda" />
         <meta property="og:description" content="Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rafidesign.com/" />
-        <meta property="og:image" content="https://unsplash.com/photos/MYbhN8KaaEc" />
+        <meta property="og:url" content="https://cubicin.com/" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop" />
         
         {/* Schema.org LocalBusiness */}
         <script type="application/ld+json">
@@ -30,8 +31,8 @@ const Index = () => {
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Rafi Design",
-              "image": "https://unsplash.com/photos/wawEfYdpkag",
+              "name": "Cubicin",
+              "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop",
               "telephone": "+6283135183093",
               "address": {
                 "@type": "PostalAddress",
@@ -42,7 +43,7 @@ const Index = () => {
               "description": "Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur.",
               "priceRange": "Rp600.000 - Rp8.000.000",
               "openingHours": "Mo-Fr 09:00-17:00",
-              "url": "https://rafidesign.com/"
+              "url": "https://cubicin.com/"
             }
           `}
         </script>
@@ -67,7 +68,7 @@ const Index = () => {
                   <ArrowRight size={18} />
                 </a>
                 <a 
-                  href="https://wa.me/6283135183093" 
+                  href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi untuk kebutuhan website, terima kasih 🙏")}`}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn-secondary flex items-center gap-2"
@@ -80,8 +81,9 @@ const Index = () => {
             <div className="md:w-1/2">
               <img 
                 src={logoSvg}
-                alt="Rafi - Freelance Designer & Web Developer" 
+                alt="Cubicin - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto animate-fade-in md:scale-110"
+                style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}}
               />
             </div>
           </div>
@@ -100,26 +102,26 @@ const Index = () => {
             <ServiceCard 
               title="Landing Page"
               description="Landing page profesional yang dioptimalkan untuk konversi dengan desain menarik."
-              imageUrl="https://unsplash.com/photos/MYbhN8KaaEc"
-              linkUrl="#landing-page"
+              imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+              linkUrl="/landing-page"
             />
             <ServiceCard 
               title="Website Custom"
               description="Website custom dengan admin dashboard yang sesuai kebutuhan bisnis Anda."
-              imageUrl="https://unsplash.com/photos/hGV2TfOh0ns"
-              linkUrl="#website-custom"
+              imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop"
+              linkUrl="/website-custom"
             />
             <ServiceCard 
               title="Website E-Commerce"
               description="Solusi e-commerce lengkap untuk menjual produk online dengan mudah."
-              imageUrl="https://unsplash.com/photos/pypeCEaJeZY"
-              linkUrl="#ecommerce"
+              imageUrl="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2370&auto=format&fit=crop"
+              linkUrl="/ecommerce"
             />
             <ServiceCard 
               title="Digital Ads"
               description="Strategi iklan digital di Google dan Meta Ads untuk menjangkau lebih banyak pelanggan."
-              imageUrl="https://unsplash.com/photos/5QgIuuBxKwM"
-              linkUrl="#digital-ads"
+              imageUrl="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=2274&auto=format&fit=crop"
+              linkUrl="/digital-ads"
             />
           </div>
         </div>
@@ -131,7 +133,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/MYbhN8KaaEc" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
                 alt="Landing Page" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -165,7 +167,7 @@ const Index = () => {
                 <p className="text-3xl font-bold text-brand-blue">Rp600.000</p>
               </div>
               <a 
-                href="https://wa.me/6283135183093?text=Saya%20tertarik%20dengan%20jasa%20Landing%20Page" 
+                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Landing Page tolong bantu saya membuatnya, terima kasih 🙏")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center gap-2"
@@ -184,7 +186,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10">
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/hGV2TfOh0ns" 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop" 
                 alt="Website Custom" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -221,7 +223,7 @@ const Index = () => {
                 <p className="text-lg font-medium text-gray-900">Harga kompetitif dan personal, sesuai kebutuhan proyek Anda.</p>
               </div>
               <a 
-                href="https://wa.me/6283135183093?text=Saya%20tertarik%20dengan%20jasa%20Website%20Custom" 
+                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Website Custom tolong bantu saya membuatnya, terima kasih 🙏")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center gap-2"
@@ -240,7 +242,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/pypeCEaJeZY" 
+                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2370&auto=format&fit=crop"
                 alt="Website E-Commerce" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -275,7 +277,7 @@ const Index = () => {
                 </li>
               </ul>
               <a 
-                href="https://wa.me/6283135183093?text=Saya%20tertarik%20dengan%20jasa%20Website%20E-Commerce" 
+                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Website E-Commerce tolong bantu saya membuatnya, terima kasih 🙏")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center gap-2"
@@ -294,7 +296,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10">
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/5QgIuuBxKwM" 
+                src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=2274&auto=format&fit=crop" 
                 alt="Digital Ads" 
                 className="rounded-lg shadow-lg w-full"
               />
@@ -328,7 +330,7 @@ const Index = () => {
                 </li>
               </ul>
               <a 
-                href="https://wa.me/6283135183093?text=Saya%20tertarik%20dengan%20jasa%20Iklan%20Digital" 
+                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Iklan Digital tolong bantu saya membuatnya, terima kasih 🙏")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center gap-2"
@@ -437,7 +439,7 @@ const Index = () => {
               Butuh paket khusus sesuai kebutuhan bisnis Anda?
             </p>
             <a 
-              href="https://wa.me/6283135183093?text=Saya%20ingin%20konsultasi%20untuk%20paket%20khusus" 
+              href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi untuk paket khusus, terima kasih 🙏")}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-primary inline-flex items-center gap-2"
@@ -455,8 +457,8 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="md:w-1/2">
               <img 
-                src="https://unsplash.com/photos/wawEfYdpkag" 
-                alt="Rafi - Freelance Designer & Web Developer" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop" 
+                alt="Cubicin - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto"
               />
             </div>
@@ -562,7 +564,7 @@ const Index = () => {
                     <div>
                       <p className="font-medium">WhatsApp / Telepon</p>
                       <a 
-                        href="https://wa.me/6283135183093" 
+                        href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi, terima kasih 🙏")}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="text-brand-blue hover:underline"
@@ -587,13 +589,13 @@ const Index = () => {
                   Dapatkan respon cepat dalam waktu 24 jam untuk kebutuhan website dan digital marketing Anda.
                 </p>
                 <a 
-                  href="https://wa.me/6283135183093" 
+                  href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi, terima kasih 🙏")}`}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="flex items-center justify-center gap-2 bg-white text-brand-blue font-semibold py-3 px-4 rounded-lg hover:bg-gray-100 transition-colors w-full"
                 >
                   <PhoneCall size={18} />
-                  <span>Chat di WhatsApp</span>
+                  <span>Hubungi via WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -611,7 +613,7 @@ const Index = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a 
-              href="https://wa.me/6283135183093?text=Saya%20ingin%20konsultasi%20gratis" 
+              href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi gratis, terima kasih 🙏")}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="bg-brand-blue hover:bg-brand-blue-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center gap-2"

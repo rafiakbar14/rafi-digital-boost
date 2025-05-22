@@ -2,6 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
   title: string;
@@ -30,13 +31,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>
-        <a 
-          href={linkUrl} 
+        <Link 
+          to={linkUrl} 
           className="flex items-center text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
         >
           <span>Lihat Detail</span>
           <ArrowRight size={16} className="ml-1" />
-        </a>
+        </Link>
       </div>
     </div>
   );
