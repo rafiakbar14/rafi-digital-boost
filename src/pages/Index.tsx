@@ -6,7 +6,6 @@ import ServiceCard from '@/components/ServiceCard';
 import PriceCard from '@/components/PriceCard';
 import Chatbot from '@/components/Chatbot';
 import { ArrowRight, PhoneCall } from 'lucide-react';
-import logoSvg from '../4_20250522_202405_0001.svg';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -85,10 +84,9 @@ const Index = () => {
             </div>
             <div className="md:w-1/2">
               <img 
-                src={logoSvg}
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
                 alt="Cubiqin - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto animate-fade-in md:scale-110"
-                style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}}
               />
             </div>
           </div>
@@ -111,8 +109,8 @@ const Index = () => {
               linkUrl="/landing-page"
             />
             <ServiceCard 
-              title="Website Custom"
-              description="Website custom dengan admin dashboard yang sesuai kebutuhan bisnis Anda."
+              title="Web Company Profile"
+              description="Website company profile dengan admin dashboard yang sesuai kebutuhan bisnis Anda."
               imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop"
               linkUrl="/website-custom"
             />
@@ -192,14 +190,14 @@ const Index = () => {
             <div className="md:w-1/2">
               <img 
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop" 
-                alt="Website Custom" 
+                alt="Web Company Profile" 
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
             <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Website Custom</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Web Company Profile</h2>
               <p className="text-gray-600">
-                Website custom yang dirancang sesuai dengan kebutuhan bisnis Anda. Dilengkapi dengan admin dashboard yang mudah digunakan tanpa perlu WordPress.
+                Website company profile yang dirancang sesuai dengan kebutuhan bisnis Anda. Dilengkapi dengan admin dashboard yang mudah digunakan tanpa perlu WordPress.
               </p>
               <h3 className="text-xl font-semibold text-gray-900">Keunggulan:</h3>
               <ul className="space-y-2">
@@ -228,7 +226,7 @@ const Index = () => {
                 <p className="text-lg font-medium text-gray-900">Harga kompetitif dan personal, sesuai kebutuhan proyek Anda.</p>
               </div>
               <a 
-                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Website Custom tolong bantu saya membuatnya, terima kasih 🙏")}`} 
+                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Web Company Profile tolong bantu saya membuatnya, terima kasih 🙏")}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn-primary inline-flex items-center gap-2"

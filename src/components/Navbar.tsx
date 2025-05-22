@@ -33,7 +33,7 @@ const Navbar = () => {
             <img 
               src={logoSvg} 
               alt="Cubiqin Logo" 
-              className="w-10 h-10" 
+              className="w-8 h-8" 
               style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} 
             />
           </Link>

@@ -47,7 +47,7 @@ const Footer = () => {
                 <li>
                   <Link to="/website-custom#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
-                    Website Custom
+                    Web Company Profile
                   </Link>
                 </li>
                 <li>
