@@ -1,20 +1,23 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ArrowRight, PhoneCall } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const LandingPage = () => {
-  const whatsappMessage = encodeURIComponent("Halo Saya berminat dengan Landing Page tolong bantu saya membuatnya, terima kasih 🙏");
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
       <Helmet>
-        <title>Jasa Landing Page Profesional - Cubicin</title>
-        <meta name="description" content="Jasa pembuatan landing page profesional untuk meningkatkan konversi bisnis Anda. Landing page dengan desain menarik dan SEO friendly." />
+        <title>Landing Page - Cubiqin</title>
+        <meta name="description" content="Jasa pembuatan landing page profesional untuk bisnis Anda." />
       </Helmet>
       
+      <div id="top"></div>
       <Navbar />
       
       <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">

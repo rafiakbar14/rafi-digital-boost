@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,13 +6,19 @@ import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
-        <title>Kebijakan Privasi - Rafi Design</title>
-        <meta name="description" content="Kebijakan privasi Rafi Design. Informasi tentang bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda." />
+        <title>Privacy Policy - Cubiqin</title>
+        <meta name="description" content="Kebijakan Privasi Cubiqin" />
       </Helmet>
       
+      <div id="top"></div>
       <Navbar />
       
       <section className="py-20 bg-white">
@@ -23,14 +28,14 @@ const PrivacyPolicy = () => {
             <span>Kembali ke Beranda</span>
           </Link>
           
-          <h1 className="text-3xl md:text-4xl font-bold mb-8">Kebijakan Privasi</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-8">Privacy Policy</h1>
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600">Terakhir diperbarui: 22 Mei 2025</p>
             
             <h2 className="text-xl font-semibold mt-8 mb-4">1. Pendahuluan</h2>
             <p>
-              Rafi Design ("kami", "milik kami", atau "kita") menghormati privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Kebijakan privasi ini akan menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda ketika Anda menggunakan layanan kami.
+              Cubiqin ("kami", "milik kami", atau "kita") menghormati privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Kebijakan privasi ini akan menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda ketika Anda menggunakan layanan kami.
             </p>
             
             <h2 className="text-xl font-semibold mt-8 mb-4">2. Informasi yang Kami Kumpulkan</h2>
@@ -72,7 +77,7 @@ const PrivacyPolicy = () => {
               <li>Dengan persetujuan Anda</li>
               <li>Kepada penyedia layanan pihak ketiga yang membantu kami dalam operasional bisnis</li>
               <li>Untuk mematuhi kewajiban hukum dan peraturan yang berlaku</li>
-              <li>Untuk melindungi dan membela hak atau properti Rafi Design</li>
+              <li>Untuk melindungi dan membela hak atau properti Cubiqin</li>
               <li>Untuk mencegah atau menyelidiki kemungkinan kesalahan dalam kaitannya dengan layanan</li>
             </ul>
             
@@ -107,7 +112,7 @@ const PrivacyPolicy = () => {
               Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami melalui:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-6">
-              <li>Email: info@rafidesign.com</li>
+              <li>Email: info@cubiqin.com</li>
               <li>WhatsApp: 083135183093</li>
               <li>Alamat: Samarinda, Kalimantan Timur, Indonesia</li>
             </ul>

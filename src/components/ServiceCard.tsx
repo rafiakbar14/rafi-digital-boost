@@ -32,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>
         <Link 
-          to={linkUrl} 
+          to={`${linkUrl}#top`} 
           className="flex items-center text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
         >
           <span>Lihat Detail</span>

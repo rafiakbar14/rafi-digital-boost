@@ -13,6 +13,7 @@ import LandingPage from "./pages/LandingPage";
 import WebsiteCustom from "./pages/WebsiteCustom";
 import Ecommerce from "./pages/Ecommerce";
 import DigitalAds from "./pages/DigitalAds";
+import Portfolio from "./pages/Portfolio";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/website-custom" element={<WebsiteCustom />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/digital-ads" element={<DigitalAds />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

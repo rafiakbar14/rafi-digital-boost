@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -11,18 +10,23 @@ import logoSvg from '../4_20250522_202405_0001.svg';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
-        <title>Cubicin - Jasa Website & Digital Marketing di Samarinda</title>
+        <title>Cubiqin - Jasa Website & Digital Marketing di Samarinda</title>
         <meta name="description" content="Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur. Profesional, cepat, dan terjangkau." />
         <meta name="keywords" content="jasa website samarinda, jasa landing page, web developer samarinda, digital marketing kalimantan, jasa pembuatan website" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Cubicin - Jasa Website & Digital Marketing di Samarinda" />
+        <meta property="og:title" content="Cubiqin - Jasa Website & Digital Marketing di Samarinda" />
         <meta property="og:description" content="Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://cubicin.com/" />
+        <meta property="og:url" content="https://cubiqin.com/" />
         <meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop" />
         
         {/* Schema.org LocalBusiness */}
@@ -31,7 +35,7 @@ const Index = () => {
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": "Cubicin",
+              "name": "Cubiqin",
               "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop",
               "telephone": "+6283135183093",
               "address": {
@@ -43,12 +47,13 @@ const Index = () => {
               "description": "Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur.",
               "priceRange": "Rp600.000 - Rp8.000.000",
               "openingHours": "Mo-Fr 09:00-17:00",
-              "url": "https://cubicin.com/"
+              "url": "https://cubiqin.com/"
             }
           `}
         </script>
       </Helmet>
       
+      <div id="top"></div>
       <Navbar />
       
       {/* Hero Section */}
@@ -81,7 +86,7 @@ const Index = () => {
             <div className="md:w-1/2">
               <img 
                 src={logoSvg}
-                alt="Cubicin - Freelance Designer & Web Developer" 
+                alt="Cubiqin - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto animate-fade-in md:scale-110"
                 style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}}
               />
@@ -458,7 +463,7 @@ const Index = () => {
             <div className="md:w-1/2">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2370&auto=format&fit=crop" 
-                alt="Cubicin - Freelance Designer & Web Developer" 
+                alt="Cubiqin - Freelance Designer & Web Developer" 
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto"
               />
             </div>

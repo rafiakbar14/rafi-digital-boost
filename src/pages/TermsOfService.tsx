@@ -1,17 +1,23 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const TermsOfService = () => {
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Helmet>
-        <title>Terms of Service - Cubicin</title>
-        <meta name="description" content="Terms of Service dan syarat penggunaan layanan Cubicin. Kebijakan penggunaan layanan pembuatan website, landing page, e-commerce, dan digital marketing." />
+        <title>Terms of Service - Cubiqin</title>
+        <meta name="description" content="Syarat dan Ketentuan Layanan Cubiqin" />
       </Helmet>
       
+      <div id="top"></div>
       <Navbar />
       
       <section className="pt-32 pb-16 bg-white">

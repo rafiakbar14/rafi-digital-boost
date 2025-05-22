@@ -15,13 +15,10 @@ const Footer = () => {
             <div className="flex items-center mb-4">
               <img 
                 src={logoSvg} 
-                alt="Cubicin Logo" 
+                alt="Cubiqin Logo" 
                 className="w-8 h-8 mr-2" 
                 style={{filter: "invert(100%)"}} 
               />
-              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-blue-light to-white">
-                Cubicin
-              </span>
             </div>
             <p className="text-gray-400 mb-6">
               Membantu UMKM go digital dan mengimplementasikan AI untuk efisiensi bisnis. Solusi digital yang profesional, cepat, dan terjangkau.
@@ -42,25 +39,25 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Layanan</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/landing-page" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/landing-page#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Landing Page
                   </Link>
                 </li>
                 <li>
-                  <Link to="/website-custom" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/website-custom#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Website Custom
                   </Link>
                 </li>
                 <li>
-                  <Link to="/ecommerce" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/ecommerce#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     E-Commerce
                   </Link>
                 </li>
                 <li>
-                  <Link to="/digital-ads" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/digital-ads#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Digital Ads
                   </Link>
@@ -72,28 +69,28 @@ const Footer = () => {
               <h4 className="text-lg font-semibold mb-4">Tautan</h4>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Beranda
                   </Link>
                 </li>
                 <li>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Layanan
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#pricing" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/#pricing" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Harga
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#about" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/#about" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Tentang Saya
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -101,9 +98,11 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Lokasi</h4>
               <p className="text-gray-400">
+                Jalan Jakarta Gang Israp Depan No. 15<br />
+                Kecamatan Loa Bakung<br />
+                Sungai Kunjang<br />
                 Samarinda<br />
-                Kalimantan Timur<br />
-                Indonesia
+                Kalimantan Timur
               </p>
             </div>
           </div>
@@ -111,13 +110,13 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 sm:mb-0">
-            © {currentYear} Cubicin. All rights reserved.
+            © {currentYear} Cubiqin. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">
+            <Link to="/privacy-policy#top" className="text-gray-500 hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-of-service" className="text-gray-500 hover:text-white transition-colors">
+            <Link to="/terms-of-service#top" className="text-gray-500 hover:text-white transition-colors">
               Terms of Service
             </Link>
           </div>
