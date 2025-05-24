@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
-import PriceCard from '@/components/PriceCard';
+import DetailedPriceCard from '@/components/DetailedPriceCard';
 import Chatbot from '@/components/Chatbot';
 import { ArrowRight, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -13,6 +13,144 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const landingPageTiers = [
+    {
+      name: "Basic",
+      price: "Rp600.000",
+      features: [
+        "2 landing page untuk A/B testing",
+        "Desain clean dan bersih",
+        "Bisa request tanpa navbar atau dengan navbar",
+        "Tanpa biaya perpanjangan",
+        "Hosting di Vercel",
+        "Integrasi Facebook Ads dan Google Ads",
+        "Gratis copywriting (brief lengkap dari klien)",
+        "Revisi minor 1 kali"
+      ]
+    },
+    {
+      name: "Premium",
+      price: "Rp1.500.000",
+      isPopular: true,
+      features: [
+        "2 landing page untuk A/B testing",
+        "Desain custom di Figma",
+        "Copywriting profesional",
+        "Integrasi Facebook Ads dan Google Ads",
+        "SEO optimization",
+        "Revisi minor 5 kali",
+        "Analytics setup",
+        "Speed optimization"
+      ]
+    },
+    {
+      name: "Enterprise",
+      price: "Rp2.000.000",
+      features: [
+        "2 landing page untuk A/B testing",
+        "Desain custom di Figma",
+        "Copywriting profesional + strategi marketing",
+        "Integrasi lengkap tracking & analytics",
+        "A/B testing setup otomatis",
+        "Revisi minor 15 kali",
+        "Konsultasi strategi marketing",
+        "Priority support"
+      ]
+    }
+  ];
+
+  const websiteTiers = [
+    {
+      name: "Starter",
+      price: "Rp1.800.000",
+      features: [
+        "4 halaman website",
+        "Desain mengikuti brand guide",
+        "Free copywriting advance (Copy.ai)",
+        "SEO optimize",
+        "Gratis chatbot AI via Bablast (3 bulan)",
+        "Responsive design",
+        "Contact form integration",
+        "Biaya perpanjangan 500rb/tahun"
+      ]
+    },
+    {
+      name: "Business",
+      price: "Rp2.500.000",
+      isPopular: true,
+      features: [
+        "8 halaman website",
+        "Semua fitur paket Starter",
+        "Gratis blog subdirectory untuk SEO",
+        "2 backlink berbayar",
+        "Google My Business setup",
+        "Gratis domain .com",
+        "Advanced analytics",
+        "Biaya perpanjangan 700rb/tahun"
+      ]
+    },
+    {
+      name: "Enterprise",
+      price: "Rp8.000.000",
+      features: [
+        "Unlimited halaman",
+        "Full customize design via Figma",
+        "Semua fitur paket Business",
+        "Gratis domain .id",
+        "4 backlink berbayar",
+        "Advanced SEO audit",
+        "Custom CMS development",
+        "Biaya perpanjangan 750rb/tahun"
+      ]
+    }
+  ];
+
+  const ecommerceTiers = [
+    {
+      name: "Starter",
+      price: "Rp3.000.000",
+      features: [
+        "Support 50 produk",
+        "Integrasi Xendit dan Midtrans",
+        "Terintegrasi Meta Ads",
+        "Inventory management",
+        "Order management system",
+        "Customer management",
+        "Basic analytics",
+        "Mobile responsive"
+      ]
+    },
+    {
+      name: "Business",
+      price: "Rp8.000.000",
+      isPopular: true,
+      features: [
+        "Support 100 produk",
+        "Semua fitur paket Starter",
+        "Gratis setup Google Ads",
+        "Gratis setup Facebook Ads",
+        "Advanced product filters",
+        "Wishlist & compare features",
+        "Email marketing integration",
+        "Multi-payment gateway"
+      ]
+    },
+    {
+      name: "Enterprise",
+      price: "Rp20.000.000",
+      features: [
+        "Unlimited produk",
+        "Semua fitur paket Business",
+        "Integrasi full AI via N8N",
+        "Gratis instalasi blog WordPress ke /blog",
+        "Advanced automation",
+        "Custom integrations",
+        "White-label solution",
+        "Dedicated support"
+      ]
+    }
+  ];
 
   return (
     <>
@@ -44,7 +182,7 @@ const Index = () => {
                 "addressCountry": "ID"
               },
               "description": "Jasa pembuatan website, landing page, e-commerce, dan digital marketing untuk UMKM di Samarinda, Kalimantan Timur.",
-              "priceRange": "Rp600.000 - Rp8.000.000",
+              "priceRange": "Rp600.000 - Rp20.000.000",
               "openingHours": "Mo-Fr 09:00-17:00",
               "url": "https://cubiqin.com/"
             }
@@ -67,10 +205,13 @@ const Index = () => {
                 Freelance designer & website developer dari Samarinda, membantu UMKM go digital dan implementasi AI untuk efisiensi bisnis.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <a href="#services" className="btn-primary flex items-center gap-2">
+                <button
+                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-primary flex items-center gap-2"
+                >
                   <span>Lihat Layanan</span>
                   <ArrowRight size={18} />
-                </a>
+                </button>
                 <a 
                   href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi untuk kebutuhan website, terima kasih 🙏")}`}
                   target="_blank" 
@@ -130,316 +271,40 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Landing Page Section */}
-      <section id="landing-page" className="py-20 bg-gray-50">
-        <div className="container max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" 
-                alt="Landing Page" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Landing Page</h2>
-              <p className="text-gray-600">
-                Landing page yang dirancang khusus untuk mengkonversi pengunjung menjadi pelanggan. Dengan desain profesional dan strategi yang tepat, landing page Anda akan mendapatkan hasil maksimal.
-              </p>
-              <h3 className="text-xl font-semibold text-gray-900">Yang Anda Dapatkan:</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>2 landing page untuk A/B testing</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Gratis 1x revisi minor</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Integrasi Facebook Pixel atau Google Tag Manager</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Waktu pengerjaan 3-5 hari kerja</span>
-                </li>
-              </ul>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Harga Mulai:</h3>
-                <p className="text-3xl font-bold text-brand-blue">Rp600.000</p>
-              </div>
-              <a 
-                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Landing Page tolong bantu saya membuatnya, terima kasih 🙏")}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <PhoneCall size={18} />
-                <span>Konsultasi Sekarang</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Website Custom Section */}
-      <section id="website-custom" className="py-20 bg-white">
-        <div className="container max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop" 
-                alt="Web Company Profile" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Web Company Profile</h2>
-              <p className="text-gray-600">
-                Website company profile yang dirancang sesuai dengan kebutuhan bisnis Anda. Dilengkapi dengan admin dashboard yang mudah digunakan tanpa perlu WordPress.
-              </p>
-              <h3 className="text-xl font-semibold text-gray-900">Keunggulan:</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Admin dashboard custom (bukan WordPress)</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Desain sesuai brand identity</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>SEO friendly</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Responsive design</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Waktu pengerjaan 7-14 hari kerja</span>
-                </li>
-              </ul>
-              <div>
-                <p className="text-lg font-medium text-gray-900">Harga kompetitif dan personal, sesuai kebutuhan proyek Anda.</p>
-              </div>
-              <a 
-                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Web Company Profile tolong bantu saya membuatnya, terima kasih 🙏")}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <PhoneCall size={18} />
-                <span>Konsultasi Sekarang</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* E-Commerce Section */}
-      <section id="ecommerce" className="py-20 bg-gray-50">
-        <div className="container max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2370&auto=format&fit=crop"
-                alt="Website E-Commerce" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Website E-Commerce</h2>
-              <p className="text-gray-600">
-                Website e-commerce lengkap untuk menjual produk secara online dengan mudah. Dilengkapi dengan berbagai fitur untuk memaksimalkan penjualan.
-              </p>
-              <h3 className="text-xl font-semibold text-gray-900">Paket Tersedia:</h3>
-              <ul className="space-y-4">
-                <li className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold">Paket Starter</span>
-                    <span className="text-brand-blue font-bold">Rp3.000.000</span>
-                  </div>
-                  <p className="text-sm text-gray-600">Support 25 produk, integrasi WhatsApp</p>
-                </li>
-                <li className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold">Paket Business</span>
-                    <span className="text-brand-blue font-bold">Rp5.000.000</span>
-                  </div>
-                  <p className="text-sm text-gray-600">Semua fitur Starter + integrasi Xendit/Midtrans</p>
-                </li>
-                <li className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-semibold">Paket Premium</span>
-                    <span className="text-brand-blue font-bold">Rp8.000.000</span>
-                  </div>
-                  <p className="text-sm text-gray-600">Semua fitur Business + otomatisasi AI (chatbot WhatsApp & website)</p>
-                </li>
-              </ul>
-              <a 
-                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Website E-Commerce tolong bantu saya membuatnya, terima kasih 🙏")}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <PhoneCall size={18} />
-                <span>Konsultasi Sekarang</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Digital Ads Section */}
-      <section id="digital-ads" className="py-20 bg-white">
-        <div className="container max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-10">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=2274&auto=format&fit=crop" 
-                alt="Digital Ads" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-            <div className="md:w-1/2 space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Jasa Iklan Digital</h2>
-              <p className="text-gray-600">
-                Strategi iklan digital yang efektif di Google Ads dan Meta Ads (Facebook/Instagram) untuk menjangkau lebih banyak pelanggan potensial.
-              </p>
-              <h3 className="text-xl font-semibold text-gray-900">Layanan Iklan:</h3>
-              <ul className="space-y-2">
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Google Ads (Search, Display, YouTube)</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Meta Ads (Facebook, Instagram)</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Landing page khusus untuk iklan</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Reporting dan analisis performa</span>
-                </li>
-                <li className="flex items-start">
-                  <ArrowRight size={18} className="text-brand-blue mr-2 mt-1 flex-shrink-0" />
-                  <span>Optimasi berkelanjutan</span>
-                </li>
-              </ul>
-              <a 
-                href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya berminat dengan jasa Iklan Digital tolong bantu saya membuatnya, terima kasih 🙏")}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <PhoneCall size={18} />
-                <span>Konsultasi Sekarang</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container max-w-7xl mx-auto">
-          <h2 className="section-title text-center">Paket Harga</h2>
+          <h2 className="section-title text-center">Paket Harga Terbaik</h2>
           <p className="section-subtitle text-center">
-            Pilih paket yang sesuai dengan kebutuhan dan budget Anda
+            Pilih paket yang sesuai dengan kebutuhan dan budget bisnis Anda. Setiap paket dirancang untuk memberikan nilai maksimal.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <PriceCard
-              title="Landing Page Basic"
-              price="Rp600.000"
-              features={[
-                "2 landing page untuk A/B testing",
-                "Gratis 1x revisi minor",
-                "Integrasi Facebook Pixel / Google Tag Manager",
-                "Waktu pengerjaan 3-5 hari",
-                "Desain responsif"
-              ]}
+            <DetailedPriceCard
+              title="Landing Page"
+              description="Landing page yang dioptimalkan untuk konversi maksimal dengan A/B testing dan integrasi iklan."
+              startingPrice="Rp600.000"
+              tiers={landingPageTiers}
             />
-            <PriceCard
-              title="Landing Page Pro"
-              price="Rp1.200.000"
-              isPopular={true}
-              features={[
-                "2 landing page untuk A/B testing",
-                "Gratis 2x revisi",
-                "Integrasi Facebook Pixel / Google Tag Manager",
-                "Copy writing profesional",
-                "SEO optimization",
-                "Waktu pengerjaan 3-5 hari"
-              ]}
+            
+            <DetailedPriceCard
+              title="Website Company Profile"
+              description="Website profesional dengan blog, SEO optimization, dan chatbot AI untuk meningkatkan kredibilitas bisnis."
+              startingPrice="Rp1.800.000"
+              tiers={websiteTiers}
             />
-            <PriceCard
-              title="Landing Page Premium"
-              price="Rp1.800.000"
-              features={[
-                "2 landing page untuk A/B testing",
-                "Gratis 3x revisi",
-                "Integrasi Facebook Pixel / Google Tag Manager",
-                "Copy writing profesional",
-                "SEO optimization",
-                "Custom animasi & interaksi",
-                "Waktu pengerjaan 5-7 hari"
-              ]}
+            
+            <DetailedPriceCard
+              title="Website E-Commerce"
+              description="Platform online shop lengkap dengan payment gateway, inventory management, dan integrasi iklan digital."
+              startingPrice="Rp3.000.000"
+              tiers={ecommerceTiers}
             />
-          </div>
-          
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold text-center mb-6">Paket E-Commerce</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
-              <PriceCard
-                title="E-Commerce Starter"
-                price="Rp3.000.000"
-                features={[
-                  "Support 25 produk",
-                  "Integrasi WhatsApp",
-                  "Admin dashboard",
-                  "Mobile responsive",
-                  "Waktu pengerjaan 14-21 hari"
-                ]}
-              />
-              <PriceCard
-                title="E-Commerce Business"
-                price="Rp5.000.000"
-                isPopular={true}
-                features={[
-                  "Support 100 produk",
-                  "Integrasi WhatsApp",
-                  "Integrasi payment gateway",
-                  "Admin dashboard lengkap",
-                  "SEO optimization",
-                  "Waktu pengerjaan 21-28 hari"
-                ]}
-              />
-              <PriceCard
-                title="E-Commerce Premium"
-                price="Rp8.000.000"
-                features={[
-                  "Support produk unlimited",
-                  "Integrasi WhatsApp",
-                  "Integrasi payment gateway",
-                  "Admin dashboard lengkap",
-                  "Otomatisasi AI (chatbot)",
-                  "SEO optimization tingkat lanjut",
-                  "Waktu pengerjaan 30-45 hari"
-                ]}
-              />
-            </div>
           </div>
           
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">
-              Butuh paket khusus sesuai kebutuhan bisnis Anda?
+              Butuh paket khusus atau konsultasi lebih lanjut?
             </p>
             <a 
               href={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo Saya ingin konsultasi untuk paket khusus, terima kasih 🙏")}`} 
@@ -448,7 +313,7 @@ const Index = () => {
               className="btn-primary inline-flex items-center gap-2"
             >
               <PhoneCall size={18} />
-              <span>Konsultasi Paket Khusus</span>
+              <span>Konsultasi Gratis</span>
             </a>
           </div>
         </div>
@@ -488,13 +353,13 @@ const Index = () => {
                 <li className="bg-white rounded-lg py-2 px-4 shadow-sm text-center">Digital Marketing</li>
                 <li className="bg-white rounded-lg py-2 px-4 shadow-sm text-center">SEO</li>
               </ul>
-              <a 
-                href="#contact" 
+              <button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary inline-flex items-center gap-2"
               >
                 <span>Hubungi Saya</span>
                 <ArrowRight size={18} />
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -624,13 +489,13 @@ const Index = () => {
               <PhoneCall size={18} />
               <span>Konsultasi Gratis</span>
             </a>
-            <a 
-              href="#services" 
+            <button
+              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-transparent border border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-200 flex items-center gap-2"
             >
               <span>Lihat Layanan</span>
               <ArrowRight size={18} />
-            </a>
+            </button>
           </div>
         </div>
       </section>

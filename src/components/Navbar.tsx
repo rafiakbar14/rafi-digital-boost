@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import logoSvg from '../4_20250522_202405_0001.svg';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,6 +21,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleSmoothScroll = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
@@ -31,33 +38,33 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
             <img 
-              src={logoSvg} 
+              src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
-              className="w-8 h-8" 
+              className="w-10 h-10" 
               style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} 
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <a 
-              href="#services" 
+            <button
+              onClick={() => handleSmoothScroll('services')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Layanan
-            </a>
-            <a 
-              href="#pricing" 
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('pricing')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Harga
-            </a>
+            </button>
             <Link
               to="/portfolio"
               className={cn(
@@ -67,24 +74,24 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <a 
-              href="#about" 
+            <button
+              onClick={() => handleSmoothScroll('about')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Tentang
-            </a>
-            <a 
-              href="#contact" 
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('contact')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Kontak
-            </a>
+            </button>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 
@@ -112,20 +119,18 @@ const Navbar = () => {
           isMenuOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"
         )}>
           <nav className="container mx-auto py-4 space-y-4 px-4">
-            <a 
-              href="#services"
+            <button
+              onClick={() => handleSmoothScroll('services')}
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Layanan
-            </a>
-            <a 
-              href="#pricing"
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('pricing')}
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Harga
-            </a>
+            </button>
             <Link
               to="/portfolio"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
@@ -133,20 +138,18 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <a 
-              href="#about"
+            <button
+              onClick={() => handleSmoothScroll('about')}
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Tentang
-            </a>
-            <a 
-              href="#contact"
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('contact')}
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
               Kontak
-            </a>
+            </button>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 

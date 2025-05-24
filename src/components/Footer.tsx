@@ -2,11 +2,17 @@
 import React from 'react';
 import { ArrowRight, PhoneCall } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoSvg from '../4_20250522_202405_0001.svg';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
+  const handleSmoothScroll = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container max-w-7xl mx-auto">
@@ -14,7 +20,7 @@ const Footer = () => {
           <div className="md:col-span-5">
             <div className="flex items-center mb-4">
               <img 
-                src={logoSvg} 
+                src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
                 alt="Cubiqin Logo" 
                 className="w-8 h-8 mr-2" 
                 style={{filter: "invert(100%)"}} 
@@ -75,22 +81,31 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#services" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <button
+                    onClick={() => handleSmoothScroll('services')}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center"
+                  >
                     <ArrowRight size={14} className="mr-1" />
                     Layanan
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/#pricing" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <button
+                    onClick={() => handleSmoothScroll('pricing')}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center"
+                  >
                     <ArrowRight size={14} className="mr-1" />
                     Harga
-                  </Link>
+                  </button>
                 </li>
                 <li>
-                  <Link to="/#about" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <button
+                    onClick={() => handleSmoothScroll('about')}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center"
+                  >
                     <ArrowRight size={14} className="mr-1" />
                     Tentang Saya
-                  </Link>
+                  </button>
                 </li>
               </ul>
             </div>
