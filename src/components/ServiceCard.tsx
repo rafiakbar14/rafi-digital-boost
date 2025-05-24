@@ -39,7 +39,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </div>
         )}
         <Link 
-          to={`${linkUrl}#top`} 
+          to={`${linkUrl}#${linkUrl === "/ecommerce" ? "pricing" : "top"}`} 
           className="flex items-center text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
         >
           <span>Lihat Detail</span>

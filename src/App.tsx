@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import LandingPage from "./pages/LandingPage";
-import WebsiteCustom from "./pages/WebsiteCustom";
+import WebCompro from "./pages/WebCompro";
 import Ecommerce from "./pages/Ecommerce";
 import DigitalAds from "./pages/DigitalAds";
 import Portfolio from "./pages/Portfolio";
@@ -29,7 +29,7 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/landing-page" element={<LandingPage />} />
-            <Route path="/website-custom" element={<WebsiteCustom />} />
+            <Route path="/web-compro" element={<WebCompro />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/digital-ads" element={<DigitalAds />} />
             <Route path="/portfolio" element={<Portfolio />} />

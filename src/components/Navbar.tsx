@@ -40,31 +40,31 @@ const Navbar = () => {
             <img 
               src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
-              className="h-12 w-auto" 
+              className="h-14 w-auto" 
               style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} 
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <button
-              onClick={() => handleSmoothScroll('services')}
+            <a
+              href="/#services"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Layanan
-            </button>
-            <button
-              onClick={() => handleSmoothScroll('pricing')}
+            </a>
+            <a
+              href="/#pricing"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Harga
-            </button>
+            </a>
             <Link
               to="/portfolio"
               className={cn(
@@ -74,15 +74,15 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <button
-              onClick={() => handleSmoothScroll('about')}
+            <a
+              href="/#about"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-gray-800"
               )}
             >
               Tentang
-            </button>
+            </a>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 
@@ -110,18 +110,20 @@ const Navbar = () => {
           isMenuOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"
         )}>
           <nav className="container mx-auto py-4 space-y-4 px-4">
-            <button
-              onClick={() => handleSmoothScroll('services')}
+            <a
+              href="/#services"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Layanan
-            </button>
-            <button
-              onClick={() => handleSmoothScroll('pricing')}
+            </a>
+            <a
+              href="/#pricing"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Harga
-            </button>
+            </a>
             <Link
               to="/portfolio"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
@@ -129,12 +131,13 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <button
-              onClick={() => handleSmoothScroll('about')}
+            <a
+              href="/#about"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               Tentang
-            </button>
+            </a>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 

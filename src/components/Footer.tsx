@@ -36,7 +36,7 @@ const Footer = () => {
               <img 
                 src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
                 alt="Cubiqin Logo" 
-                className="h-12 w-auto" 
+                className="h-14 w-auto" 
                 style={{filter: "invert(100%)"}} 
               />
             </div>
@@ -65,7 +65,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/website-custom#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
+                  <Link to="/web-compro#top" className="text-gray-400 hover:text-white transition-colors flex items-center">
                     <ArrowRight size={14} className="mr-1" />
                     Web Company Profile
                   </Link>
@@ -95,31 +95,31 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleSmoothScroll('services')}
+                  <a
+                    href="/#services"
                     className="text-gray-400 hover:text-white transition-colors flex items-center"
                   >
                     <ArrowRight size={14} className="mr-1" />
                     Layanan
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleSmoothScroll('pricing')}
+                  <a
+                    href="/#pricing"
                     className="text-gray-400 hover:text-white transition-colors flex items-center"
                   >
                     <ArrowRight size={14} className="mr-1" />
                     Harga
-                  </button>
+                  </a>
                 </li>
                 <li>
-                  <button
-                    onClick={() => handleSmoothScroll('about')}
+                  <a
+                    href="/#about"
                     className="text-gray-400 hover:text-white transition-colors flex items-center"
                   >
                     <ArrowRight size={14} className="mr-1" />
                     Tentang Saya
-                  </button>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -138,9 +138,14 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 sm:mb-0">
-            © {currentYear} Cubiqin. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-4 sm:mb-0">
+            <p className="text-gray-500 text-sm">
+              © {currentYear} Cubiqin. All rights reserved.
+            </p>
+            <p className="text-gray-500 text-sm">
+              Dibuat dengan ❤️ oleh Tim Cubiqin
+            </p>
+          </div>
           <div className="flex gap-4">
             <Link to="/privacy-policy#top" className="text-gray-500 hover:text-white transition-colors">
               Privacy Policy

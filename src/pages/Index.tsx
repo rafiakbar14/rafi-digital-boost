@@ -253,7 +253,7 @@ const Index = () => {
               title="Web Company Profile"
               description="Website company profile dengan admin dashboard yang sesuai kebutuhan bisnis Anda."
               imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop"
-              linkUrl="/website-custom"
+              linkUrl="/web-compro"
             />
             <ServiceCard 
               title="Website E-Commerce"

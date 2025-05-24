@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import { ArrowRight, PhoneCall, BarChart3 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ServiceCard from '@/components/ServiceCard';
+import PriceCard from '@/components/PriceCard';
 
 const DigitalAds = () => {
   const whatsappMessage = encodeURIComponent("Halo Saya berminat dengan Digital Ads tolong bantu saya membuatnya, terima kasih 🙏");
@@ -11,10 +13,11 @@ const DigitalAds = () => {
   return (
     <>
       <Helmet>
-        <title>Jasa Digital Ads - Cubicin</title>
+        <title>Jasa Digital Ads - Cubiqin</title>
         <meta name="description" content="Jasa iklan digital profesional untuk meningkatkan awareness dan penjualan bisnis Anda. Strategi iklan Google Ads dan Meta Ads yang efektif." />
       </Helmet>
       
+      <div id="top"></div>
       <Navbar />
       
       <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
@@ -55,7 +58,7 @@ const DigitalAds = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="bg-gray-50 rounded-lg p-6 shadow-md">
               <h3 className="text-2xl font-bold mb-4 flex items-center">
-                <img src="https://cdn.iconscout.com/icon/free/png-256/free-google-160-189824.png" alt="Google Ads" className="w-8 h-8 mr-2" />
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-google-160-189824.png" alt="Google Ads" className="w-7 h-7 mr-2" />
                 Google Ads
               </h3>
               <p className="text-gray-600 mb-6">
@@ -92,7 +95,11 @@ const DigitalAds = () => {
             
             <div className="bg-gray-50 rounded-lg p-6 shadow-md">
               <h3 className="text-2xl font-bold mb-4 flex items-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Facebook.svg/2560px-Facebook.svg.png" alt="Meta Ads" className="w-8 h-8 mr-2" />
+                <div className="w-7 h-7 bg-blue-600 rounded-lg flex items-center justify-center mr-2">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
                 Meta Ads
               </h3>
               <p className="text-gray-600 mb-6">
@@ -126,6 +133,67 @@ const DigitalAds = () => {
                 <span>Konsultasi Meta Ads</span>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-16 bg-gray-50">
+        <div className="container max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Paket Digital Ads</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <PriceCard
+              title="Starter"
+              price="Rp2.500.000/bulan"
+              features={[
+                "Budget iklan Rp2.000.000/bulan",
+                "Manajemen 1 platform (Google atau Meta)",
+                "Setup kampanye awal",
+                "Laporan mingguan",
+                "Optimasi dasar",
+                "Target audience research",
+                "Ad copy hingga 3 variasi",
+                "WhatsApp support"
+              ]}
+              ctaText="Pesan Sekarang"
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya berminat dengan paket Digital Ads Starter. Bisa konsultasi lebih lanjut?")}`}
+            />
+            
+            <PriceCard
+              title="Professional"
+              price="Rp4.000.000/bulan"
+              features={[
+                "Budget iklan Rp5.000.000/bulan",
+                "Manajemen Google & Meta Ads",
+                "A/B testing advanced",
+                "Laporan harian",
+                "Conversion tracking setup",
+                "Remarketing campaigns",
+                "Landing page optimization",
+                "Priority support & konsultasi"
+              ]}
+              isPopular={true}
+              ctaText="Pesan Sekarang"
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya berminat dengan paket Digital Ads Professional. Bisa konsultasi lebih lanjut?")}`}
+            />
+            
+            <PriceCard
+              title="Enterprise"
+              price="Rp8.000.000/bulan"
+              features={[
+                "Budget iklan unlimited",
+                "Full platform management",
+                "Advanced analytics & BI dashboard",
+                "Dedicated account manager",
+                "Custom landing pages",
+                "CRO (Conversion Rate Optimization)",
+                "Multi-channel attribution",
+                "24/7 support & monthly strategy call"
+              ]}
+              ctaText="Pesan Sekarang"
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya berminat dengan paket Digital Ads Enterprise. Bisa konsultasi lebih lanjut?")}`}
+            />
           </div>
         </div>
       </section>
@@ -229,6 +297,30 @@ const DigitalAds = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Layanan Lainnya</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ServiceCard 
+              title="Landing Page"
+              description="Landing page profesional yang dioptimalkan untuk konversi dengan desain menarik."
+              imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+              linkUrl="/landing-page"
+              startingPrice="Rp600.000"
+            />
+            <ServiceCard 
+              title="Web Company Profile"
+              description="Website company profile dengan admin dashboard yang sesuai kebutuhan bisnis Anda."
+              imageUrl="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2370&auto=format&fit=crop"
+              linkUrl="/web-compro"
+              startingPrice="Rp1.800.000"
+            />
           </div>
         </div>
       </section>
