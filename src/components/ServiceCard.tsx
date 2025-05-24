@@ -9,6 +9,7 @@ interface ServiceCardProps {
   description: string;
   imageUrl: string;
   linkUrl: string;
+  startingPrice?: string;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
   imageUrl,
   linkUrl,
+  startingPrice,
   className
 }) => {
   return (
@@ -31,6 +33,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>
+        {startingPrice && (
+          <div className="mb-4">
+            <span className="text-lg font-bold text-brand-blue">Mulai dari {startingPrice}</span>
+          </div>
+        )}
         <Link 
           to={`${linkUrl}#top`} 
           className="flex items-center text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"

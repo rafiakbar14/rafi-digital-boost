@@ -1,9 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, PhoneCall } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ServiceCard from '@/components/ServiceCard';
 
 const LandingPage = () => {
   // Define the WhatsApp message
@@ -203,6 +203,28 @@ const LandingPage = () => {
                 Pilih Paket
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-16 bg-white">
+        <div className="container max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Layanan Lainnya</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <ServiceCard
+              title="Web Company Profile"
+              description="Website profesional untuk membangun kredibilitas dan kepercayaan bisnis Anda"
+              imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+              linkUrl="/website-custom"
+              className="hover:shadow-lg transition-shadow"
+            />
+            <ServiceCard
+              title="E-Commerce"
+              description="Toko online lengkap dengan sistem pembayaran dan manajemen produk"
+              imageUrl="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop"
+              linkUrl="/ecommerce"
+              className="hover:shadow-lg transition-shadow"
+            />
           </div>
         </div>
       </section>

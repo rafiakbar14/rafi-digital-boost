@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
       isScrolled ? "bg-white shadow-md" : "bg-transparent"
     )}>
       <div className="container max-w-7xl mx-auto px-4">
@@ -40,7 +40,7 @@ const Navbar = () => {
             <img 
               src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
-              className="w-10 h-10" 
+              className="h-12 w-auto" 
               style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} 
             />
           </Link>
@@ -82,15 +82,6 @@ const Navbar = () => {
               )}
             >
               Tentang
-            </button>
-            <button
-              onClick={() => handleSmoothScroll('contact')}
-              className={cn(
-                "font-medium hover:text-brand-blue transition-colors",
-                isScrolled ? "text-gray-700" : "text-gray-800"
-              )}
-            >
-              Kontak
             </button>
             <a 
               href="https://wa.me/6283135183093" 
@@ -143,12 +134,6 @@ const Navbar = () => {
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
             >
               Tentang
-            </button>
-            <button
-              onClick={() => handleSmoothScroll('contact')}
-              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-            >
-              Kontak
             </button>
             <a 
               href="https://wa.me/6283135183093" 
