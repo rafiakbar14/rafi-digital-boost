@@ -36,7 +36,7 @@ const Footer = () => {
               <img 
                 src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
                 alt="Cubiqin Logo" 
-                className="h-14 w-auto" 
+                className="h-10 w-auto" 
                 style={{filter: "invert(100%)"}} 
               />
             </div>

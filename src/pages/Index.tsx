@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '@/components/Navbar';
@@ -23,7 +24,7 @@ const Index = () => {
         "Desain clean dan bersih",
         "Bisa request tanpa navbar atau dengan navbar",
         "Tanpa biaya perpanjangan",
-        "Hosting di Vercel",
+        "Hosting di Vercel (1GB storage)",
         "Integrasi Facebook Ads dan Google Ads",
         "Gratis copywriting (brief lengkap dari klien)",
         "Revisi minor 1 kali"
@@ -31,7 +32,7 @@ const Index = () => {
     },
     {
       name: "Premium",
-      price: "Rp1.500.000",
+      price: "Rp1.200.000",
       isPopular: true,
       features: [
         "2 landing page untuk A/B testing",
@@ -41,7 +42,9 @@ const Index = () => {
         "SEO optimization",
         "Revisi minor 5 kali",
         "Analytics setup",
-        "Speed optimization"
+        "Speed optimization",
+        "Hosting di Vercel (2GB storage)",
+        "Gratis domain .biz.id"
       ]
     },
     {
@@ -55,7 +58,9 @@ const Index = () => {
         "A/B testing setup otomatis",
         "Revisi minor 15 kali",
         "Konsultasi strategi marketing",
-        "Priority support"
+        "Priority support",
+        "Hosting di Vercel (5GB storage)",
+        "Gratis domain .biz.id"
       ]
     }
   ];
@@ -72,6 +77,8 @@ const Index = () => {
         "Gratis chatbot AI via Bablast (3 bulan)",
         "Responsive design",
         "Contact form integration",
+        "Hosting (5GB storage)",
+        "Gratis domain .com",
         "Biaya perpanjangan 500rb/tahun"
       ]
     },
@@ -85,8 +92,9 @@ const Index = () => {
         "Gratis blog subdirectory untuk SEO",
         "2 backlink berbayar",
         "Google My Business setup",
-        "Gratis domain .com",
         "Advanced analytics",
+        "Hosting (10GB storage)",
+        "Gratis domain .com",
         "Biaya perpanjangan 700rb/tahun"
       ]
     },
@@ -101,6 +109,8 @@ const Index = () => {
         "4 backlink berbayar",
         "Advanced SEO audit",
         "Custom CMS development",
+        "Hosting (25GB storage)",
+        "Gratis domain .com",
         "Biaya perpanjangan 750rb/tahun"
       ]
     }
@@ -118,7 +128,8 @@ const Index = () => {
         "Order management system",
         "Customer management",
         "Basic analytics",
-        "Mobile responsive"
+        "Mobile responsive",
+        "Hosting (10GB storage)"
       ]
     },
     {
@@ -133,7 +144,8 @@ const Index = () => {
         "Advanced product filters",
         "Wishlist & compare features",
         "Email marketing integration",
-        "Multi-payment gateway"
+        "Multi-payment gateway",
+        "Hosting (25GB storage)"
       ]
     },
     {
@@ -147,7 +159,8 @@ const Index = () => {
         "Advanced automation",
         "Custom integrations",
         "White-label solution",
-        "Dedicated support"
+        "Dedicated support",
+        "Hosting (100GB storage)"
       ]
     }
   ];
