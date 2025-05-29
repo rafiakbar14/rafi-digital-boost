@@ -1,9 +1,17 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ExternalLink, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar, Eye } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Portfolio = () => {
   // Scroll to top on page load
@@ -15,8 +23,9 @@ const Portfolio = () => {
   const portfolioItems = [
     {
       id: 1,
-      title: "Landing Page Emas Syariah",
+      title: "Contoh Hasil Landing Page Kami",
       description: "Landing page penjualan emas syariah yang mengedepankan transaksi tanpa riba dan ketidakjelasan atau Gharar",
+      detailedDescription: "Website ini merupakan landing page untuk penjualan emas syariah yang dirancang khusus dengan prinsip-prinsip syariah. Fitur utama meliputi katalog produk emas, kalkulator harga real-time, sistem pemesanan online, dan edukasi mengenai investasi emas syariah. Desain yang clean dan modern dengan fokus pada konversi tinggi.",
       image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=2340&auto=format&fit=crop",
       category: "Landing Page",
       date: "2024",
@@ -24,8 +33,9 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      title: "Landing Page CCTV",
+      title: "Website Pemasangan CCTV",
       description: "Landing page untuk penjualan dan pemasangan sistem CCTV dengan berbagai pilihan paket sesuai kebutuhan",
+      detailedDescription: "Website komprehensif untuk jasa pemasangan CCTV yang menampilkan berbagai paket layanan, galeri hasil instalasi, testimoni pelanggan, dan sistem booking konsultasi online. Dilengkapi dengan fitur live chat untuk konsultasi cepat dan kalkulator estimasi biaya pemasangan berdasarkan kebutuhan area.",
       image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=2340&auto=format&fit=crop",
       category: "Landing Page",
       date: "2024",
@@ -33,39 +43,38 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "Landing Page Properti",
+      title: "Website Penjualan Rumah",
       description: "Landing page untuk penjualan rumah dengan tampilan gallery yang menarik dan informasi properti yang lengkap",
+      detailedDescription: "Platform penjualan properti dengan fitur pencarian advanced, virtual tour 360°, kalkulator KPR, dan sistem booking viewing online. Menampilkan informasi lengkap properti termasuk spesifikasi, lokasi, fasilitas sekitar, dan proses pembelian yang transparan dengan dokumentasi lengkap.",
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2340&auto=format&fit=crop",
       category: "Landing Page",
       date: "2024",
       link: "https://lprumah.cubiqin.com"
-    },
+    }
+  ];
+
+  // Coming Soon items
+  const comingSoonItems = [
     {
       id: 4,
-      title: "Landing Page E-Commerce Fashion",
-      description: "Landing page untuk brand fashion lokal dengan fokus konversi tinggi",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2340&auto=format&fit=crop",
-      category: "Landing Page",
-      date: "2024",
-      link: "#"
+      title: "E-Commerce Fashion",
+      description: "Platform e-commerce untuk brand fashion lokal dengan sistem inventory dan payment gateway terintegrasi",
+      category: "E-Commerce",
+      date: "Coming Soon"
     },
     {
       id: 5,
-      title: "Website Company Profile Tech Startup",
-      description: "Website profesional untuk startup teknologi dengan desain modern",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+      title: "Company Profile Tech Startup",
+      description: "Website profesional untuk startup teknologi dengan portfolio dan sistem career page",
       category: "Company Profile",
-      date: "2024", 
-      link: "#"
+      date: "Coming Soon"
     },
     {
       id: 6,
       title: "E-Commerce Platform UMKM",
-      description: "Platform e-commerce lengkap untuk UMKM dengan sistem pembayaran terintegrasi",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop",
+      description: "Platform marketplace untuk UMKM dengan multi-vendor dan sistem dropshipping",
       category: "E-Commerce",
-      date: "2024",
-      link: "#"
+      date: "Coming Soon"
     }
   ];
 
@@ -108,15 +117,68 @@ const Portfolio = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
                   <p className="text-gray-600 mb-4">{item.description}</p>
-                  <a 
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
-                  >
-                    <span>Lihat Project</span>
-                    <ExternalLink size={14} />
-                  </a>
+                  <div className="flex gap-2">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-dark font-medium transition-colors">
+                          <Eye size={14} />
+                          <span>Lihat Detail</span>
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl">
+                        <DialogHeader>
+                          <DialogTitle>{item.title}</DialogTitle>
+                          <DialogDescription className="text-left">
+                            {item.detailedDescription}
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="mt-4">
+                          <a 
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium px-4 py-2 rounded-lg transition-colors"
+                          >
+                            <span>Kunjungi Website</span>
+                            <ExternalLink size={14} />
+                          </a>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                    <a 
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
+                    >
+                      <span>Kunjungi</span>
+                      <ExternalLink size={14} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {comingSoonItems.map((item) => (
+              <div key={item.id} className="bg-white rounded-xl overflow-hidden shadow-md opacity-75">
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-4xl font-bold text-gray-500">Coming Soon</span>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-gray-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar size={14} className="text-gray-500" />
+                    <span className="text-sm text-gray-500">{item.date}</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
+                  <span className="text-gray-400 font-medium">Segera Hadir</span>
                 </div>
               </div>
             ))}
