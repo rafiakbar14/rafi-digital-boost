@@ -11,10 +11,37 @@ const Portfolio = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Placeholder portfolio items - you can replace these with real data
+  // Portfolio items with real data
   const portfolioItems = [
     {
       id: 1,
+      title: "Landing Page Emas Syariah",
+      description: "Landing page penjualan emas syariah yang mengedepankan transaksi tanpa riba dan ketidakjelasan atau Gharar",
+      image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=2340&auto=format&fit=crop",
+      category: "Landing Page",
+      date: "2024",
+      link: "https://lpemas.cubiqin.com"
+    },
+    {
+      id: 2,
+      title: "Landing Page CCTV",
+      description: "Landing page untuk penjualan dan pemasangan sistem CCTV dengan berbagai pilihan paket sesuai kebutuhan",
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=2340&auto=format&fit=crop",
+      category: "Landing Page",
+      date: "2024",
+      link: "https://lpcctv.cubiqin.com"
+    },
+    {
+      id: 3,
+      title: "Landing Page Properti",
+      description: "Landing page untuk penjualan rumah dengan tampilan gallery yang menarik dan informasi properti yang lengkap",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2340&auto=format&fit=crop",
+      category: "Landing Page",
+      date: "2024",
+      link: "https://lprumah.cubiqin.com"
+    },
+    {
+      id: 4,
       title: "Landing Page E-Commerce Fashion",
       description: "Landing page untuk brand fashion lokal dengan fokus konversi tinggi",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2340&auto=format&fit=crop",
@@ -23,7 +50,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
-      id: 2,
+      id: 5,
       title: "Website Company Profile Tech Startup",
       description: "Website profesional untuk startup teknologi dengan desain modern",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
@@ -32,7 +59,7 @@ const Portfolio = () => {
       link: "#"
     },
     {
-      id: 3,
+      id: 6,
       title: "E-Commerce Platform UMKM",
       description: "Platform e-commerce lengkap untuk UMKM dengan sistem pembayaran terintegrasi",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop",
