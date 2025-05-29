@@ -11,6 +11,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import LandingPage from "./pages/LandingPage";
 import WebCompro from "./pages/WebCompro";
+import WebsiteCompro from "./pages/WebsiteCompro";
 import Ecommerce from "./pages/Ecommerce";
 import DigitalAds from "./pages/DigitalAds";
 import Portfolio from "./pages/Portfolio";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/web-compro" element={<WebCompro />} />
+            <Route path="/website-compro" element={<WebsiteCompro />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
             <Route path="/digital-ads" element={<DigitalAds />} />
             <Route path="/portfolio" element={<Portfolio />} />
