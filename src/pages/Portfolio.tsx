@@ -117,11 +117,11 @@ const Portfolio = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h3>
                   <p className="text-gray-600 mb-4">{item.description}</p>
-                  <div className="flex gap-2">
+                  <div className="flex flex-col gap-3">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <button className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-dark font-medium transition-colors">
-                          <Eye size={14} />
+                        <button className="w-full inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors">
+                          <Eye size={16} />
                           <span>Lihat Detail</span>
                         </button>
                       </DialogTrigger>
@@ -149,10 +149,10 @@ const Portfolio = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium py-2 px-4 rounded-lg transition-colors"
                     >
-                      <span>Kunjungi</span>
-                      <ExternalLink size={14} />
+                      <span>Kunjungi Website</span>
+                      <ExternalLink size={16} />
                     </a>
                   </div>
                 </div>

@@ -215,7 +215,7 @@ const LandingPage = () => {
               title="Web Company Profile"
               description="Website profesional untuk membangun kredibilitas dan kepercayaan bisnis Anda"
               imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-              linkUrl="/website-custom"
+              linkUrl="/web-compro"
               className="hover:shadow-lg transition-shadow"
             />
             <ServiceCard
