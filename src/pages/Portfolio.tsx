@@ -26,7 +26,7 @@ const Portfolio = () => {
       title: "Contoh Hasil Landing Page Kami",
       description: "Landing page penjualan emas syariah yang mengedepankan transaksi tanpa riba dan ketidakjelasan atau Gharar",
       detailedDescription: "Website ini merupakan landing page untuk penjualan emas syariah yang dirancang khusus dengan prinsip-prinsip syariah. Fitur utama meliputi katalog produk emas, kalkulator harga real-time, sistem pemesanan online, dan edukasi mengenai investasi emas syariah. Desain yang clean dan modern dengan fokus pada konversi tinggi.",
-      image: "https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=2340&auto=format&fit=crop",
+      image: "/lovable-uploads/6624b127-c42e-40ac-9aa5-8f04a0e7f77f.png",
       category: "Landing Page",
       date: "2024",
       link: "https://lpemas.cubiqin.com"
@@ -36,7 +36,7 @@ const Portfolio = () => {
       title: "Website Pemasangan CCTV",
       description: "Landing page untuk penjualan dan pemasangan sistem CCTV dengan berbagai pilihan paket sesuai kebutuhan",
       detailedDescription: "Website komprehensif untuk jasa pemasangan CCTV yang menampilkan berbagai paket layanan, galeri hasil instalasi, testimoni pelanggan, dan sistem booking konsultasi online. Dilengkapi dengan fitur live chat untuk konsultasi cepat dan kalkulator estimasi biaya pemasangan berdasarkan kebutuhan area.",
-      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=2340&auto=format&fit=crop",
+      image: "/lovable-uploads/93f41743-3abb-4dda-8431-783bb0ea5cc3.png",
       category: "Landing Page",
       date: "2024",
       link: "https://lpcctv.cubiqin.com"
