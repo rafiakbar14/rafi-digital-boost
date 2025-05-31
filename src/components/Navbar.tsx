@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
+              src="/Salinan dari Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
               className={cn(
                 "h-10 w-auto transition-all duration-300",
