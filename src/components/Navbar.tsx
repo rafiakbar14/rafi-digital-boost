@@ -40,8 +40,12 @@ const Navbar = () => {
             <img 
               src="https://raw.githubusercontent.com/rafiakbar14/rafi-digital-boost/main/public/Salinan%20dari%20Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
-              className="h-10 w-auto" 
-              style={{filter: "invert(19%) sepia(98%) saturate(2270%) hue-rotate(201deg) brightness(96%) contrast(98%)"}} 
+              className={cn(
+                "h-10 w-auto transition-all duration-300",
+                isScrolled 
+                  ? "filter-none" 
+                  : "brightness-0 invert"
+              )}
             />
           </Link>
 
@@ -51,7 +55,7 @@ const Navbar = () => {
               href="/#services"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
-                isScrolled ? "text-gray-700" : "text-gray-800"
+                isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Layanan
@@ -60,7 +64,7 @@ const Navbar = () => {
               href="/#pricing"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
-                isScrolled ? "text-gray-700" : "text-gray-800"
+                isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Harga
@@ -69,7 +73,7 @@ const Navbar = () => {
               to="/portfolio"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
-                isScrolled ? "text-gray-700" : "text-gray-800"
+                isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Portofolio
@@ -78,7 +82,7 @@ const Navbar = () => {
               href="/#about"
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
-                isScrolled ? "text-gray-700" : "text-gray-800"
+                isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Tentang
@@ -96,7 +100,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-700"
+            className={cn(
+              "md:hidden transition-colors",
+              isScrolled ? "text-gray-700" : "text-white"
+            )}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >

@@ -60,8 +60,8 @@ const WebsiteCompro = () => {
   return (
     <>
       <Helmet>
-        <title>Paket Website Company Profile 1.5 Juta - Cubiqin</title>
-        <meta name="description" content="Jasa pembuatan website company profile profesional dengan harga terjangkau mulai dari Rp1.500.000. Tingkatkan kredibilitas bisnis Anda!" />
+        <title>Website Company Profile Profesional - Mulai dari 1.5 Juta | Cubiqin</title>
+        <meta name="description" content="Butuh hadir secara online kepada pelanggan? Komunikasikan brand Anda dengan website company profile profesional yang #Qubicin. Paket lengkap mulai Rp1.500.000" />
       </Helmet>
       
       <div id="top"></div>
@@ -71,12 +71,11 @@ const WebsiteCompro = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white">
         <div className="container max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Website <span className="text-yellow-300">Company Profile</span> 
-            <br className="hidden md:block" />
-            Profesional untuk Bisnis Anda
+            Butuh Hadir Secara Online <br className="hidden md:block" />
+            Kepada Pelanggan?
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-blue-100">
-            Tingkatkan kredibilitas dan jangkauan bisnis dengan website company profile yang <span className="font-bold text-yellow-300">#Qubicin</span>
+            Yuk komunikasikan brandmu secara lebih dekat dengan website company profile yang <span className="font-bold text-yellow-300">#Qubicin</span>
           </p>
           <a 
             href={`https://wa.me/6283135183093?text=${whatsappMessage}`} 
@@ -90,12 +89,24 @@ const WebsiteCompro = () => {
         </div>
       </section>
       
-      {/* Benefits Section */}
+      {/* Interest Section - More Complete Explanation */}
       <section className="py-20 bg-white">
         <div className="container max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gray-900">
-            Mengapa Bisnis Anda Butuh Website Company Profile?
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Capek Menjelaskan Bisnis Anda Berulang-ulang?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+              Dengan website company profile, Anda bisa menjelaskan semua produk, layanan, dan aktivitas bisnis 
+              yang dijalankan tanpa harus menjelaskannya satu per satu yang pastinya capek dan memakan waktu. 
+              Website akan bekerja 24/7 untuk Anda sebagai sales terbaik yang tidak pernah lelah.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Bayangkan betapa mudahnya ketika calon pelanggan bisa langsung melihat profil perusahaan, 
+              testimoni klien, galeri produk, dan cara menghubungi Anda kapan saja mereka mau. 
+              Tidak perlu lagi menjelaskan dari awal setiap kali ada yang bertanya!
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center p-6">
@@ -104,7 +115,7 @@ const WebsiteCompro = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Meningkatkan Kredibilitas</h3>
               <p className="text-gray-600">
-                Website profesional membuat bisnis Anda terlihat lebih terpercaya di mata calon pelanggan.
+                Website profesional membuat bisnis Anda terlihat lebih terpercaya dan established di mata calon pelanggan.
               </p>
             </div>
             
@@ -114,7 +125,7 @@ const WebsiteCompro = () => {
               </div>
               <h3 className="text-xl font-bold mb-2">Jangkauan Lebih Luas</h3>
               <p className="text-gray-600">
-                Calon pelanggan bisa menemukan dan mengenal bisnis Anda 24/7 melalui internet.
+                Calon pelanggan bisa menemukan dan mengenal bisnis Anda 24/7 melalui internet dari mana saja.
               </p>
             </div>
             
@@ -122,16 +133,16 @@ const WebsiteCompro = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <ArrowRight size={32} className="text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Kompetisi Lebih Unggul</h3>
+              <h3 className="text-xl font-bold mb-2">Hemat Waktu & Tenaga</h3>
               <p className="text-gray-600">
-                Tampil lebih profesional dibanding kompetitor yang belum memiliki website.
+                Tidak perlu lagi menjelaskan berulang-ulang. Biarkan website yang menjelaskan bisnis Anda.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Pricing Section - Consistent with Homepage */}
       <section className="py-20 bg-gray-50">
         <div className="container max-w-6xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-gray-900">
@@ -143,60 +154,63 @@ const WebsiteCompro = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <PriceCard
-              title="Website Basic"
-              price="Rp800.000"
+              title="Paket Basic"
+              price="Rp1.500.000"
               features={[
-                "5 Halaman (Home, About, Service, Gallery, Contact)",
-                "Desain responsif mobile-friendly",
-                "Domain .com gratis 1 tahun",
-                "Hosting 1 tahun",
+                "5 Halaman Website",
+                "Desain Responsif Mobile",
+                "Domain .com GRATIS 1 Tahun",
+                "Hosting GRATIS 1 Tahun",
                 "SSL Certificate",
-                "Optimasi SEO dasar",
-                "Form kontak WhatsApp",
-                "2x revisi gratis"
+                "WhatsApp Integration",
+                "SEO Friendly",
+                "2x Revisi GRATIS"
               ]}
               ctaText="Pesan Basic"
-              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan paket Website Basic Rp800.000. Bisa kasih info lengkapnya?")}`}
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan Paket Basic Website Company Profile Rp1.500.000. Bisa kasih info lengkapnya?")}`}
             />
             
             <PriceCard
-              title="Website Professional"
-              price="Rp1.500.000"
+              title="Paket Professional"
+              price="Rp2.500.000"
               features={[
-                "8 Halaman + Blog",
-                "Desain custom premium",
-                "Domain .com gratis 1 tahun", 
-                "Hosting premium 1 tahun",
+                "10 Halaman Website + Blog",
+                "Desain Premium Custom",
+                "Domain .com GRATIS 1 Tahun", 
+                "Hosting Premium GRATIS 1 Tahun",
                 "SSL Certificate",
-                "SEO optimization lengkap",
-                "Google Analytics setup",
-                "Live chat WhatsApp",
-                "3x revisi gratis",
-                "Maintenance 3 bulan"
+                "SEO Optimization Lengkap",
+                "Google Analytics Setup",
+                "Live Chat WhatsApp",
+                "Admin Panel",
+                "3x Revisi GRATIS",
+                "Maintenance 3 Bulan GRATIS"
               ]}
               isPopular={true}
               ctaText="Pesan Professional"
-              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan paket Website Professional Rp1.500.000. Bisa kasih info lengkapnya?")}`}
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan Paket Professional Website Company Profile Rp2.500.000. Bisa kasih info lengkapnya?")}`}
             />
             
             <PriceCard
-              title="Website Premium"
-              price="Rp2.500.000"
+              title="Paket Premium"
+              price="Rp4.500.000"
               features={[
-                "Unlimited halaman",
-                "Desain custom eksklusif",
-                "Domain .com gratis 1 tahun",
-                "Hosting premium 1 tahun", 
+                "Unlimited Halaman",
+                "Desain Eksklusif Custom",
+                "Domain .com GRATIS 1 Tahun",
+                "Hosting Premium GRATIS 1 Tahun", 
                 "SSL Certificate",
-                "SEO optimization advanced",
-                "Google Ads setup",
-                "CRM integration",
-                "Admin panel",
-                "5x revisi gratis",
-                "Maintenance 6 bulan"
+                "SEO Optimization Advanced",
+                "Google Ads Setup GRATIS",
+                "CRM Integration",
+                "Admin Panel Advanced",
+                "Form Builder",
+                "5x Revisi GRATIS",
+                "Maintenance 6 Bulan GRATIS",
+                "Training Penggunaan Website"
               ]}
               ctaText="Pesan Premium"
-              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan paket Website Premium Rp2.500.000. Bisa kasih info lengkapnya?")}`}
+              ctaLink={`https://wa.me/6283135183093?text=${encodeURIComponent("Halo, saya tertarik dengan Paket Premium Website Company Profile Rp4.500.000. Bisa kasih info lengkapnya?")}`}
             />
           </div>
         </div>
@@ -280,10 +294,10 @@ const WebsiteCompro = () => {
       <section className="py-20 bg-gradient-to-br from-green-600 to-green-700 text-white">
         <div className="container max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Siap Meningkatkan Kredibilitas Bisnis Anda?
+            Pengen Buat Website Company Profile?
           </h2>
           <p className="text-xl mb-8 text-green-100">
-            Jangan biarkan kompetitor unggul dari Anda. Dapatkan website company profile profesional dengan harga terjangkau!
+            Nih langsung klik tombol dibawah untuk langsung ngobrol di WhatsApp dan dapatkan konsultasi GRATIS!
           </p>
           <a 
             href={`https://wa.me/6283135183093?text=${whatsappMessage}`} 
@@ -292,7 +306,7 @@ const WebsiteCompro = () => {
             className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-green-700 font-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             <PhoneCall size={24} />
-            <span>Konsultasi Gratis Sekarang</span>
+            <span>Hubungi Kami di WhatsApp</span>
           </a>
           <p className="mt-6 text-green-200 text-sm">
             💬 Gratis konsultasi & penawaran khusus untuk Anda!
