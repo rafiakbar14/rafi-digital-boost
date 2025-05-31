@@ -29,6 +29,16 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleExternalClick = () => {
+    // Google Tag Manager event untuk klik keluar
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'klik_keluar', {
+        event_category: 'engagement',
+        event_label: 'whatsapp_contact'
+      });
+    }
+  };
+
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3",
@@ -40,12 +50,7 @@ const Navbar = () => {
             <img 
               src="/Salinan dari Kuvanto_20250524_115002_0000.svg"
               alt="Cubiqin Logo" 
-              className={cn(
-                "h-10 w-auto transition-all duration-300",
-                isScrolled 
-                  ? "filter-none" 
-                  : "brightness-0 invert"
-              )}
+              className="h-10 w-auto"
             />
           </Link>
 
@@ -91,6 +96,7 @@ const Navbar = () => {
               href="https://wa.me/6283135183093" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={handleExternalClick}
               className="flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium px-4 py-2 rounded-lg transition-colors"
             >
               <PhoneCall size={16} />
@@ -149,8 +155,11 @@ const Navbar = () => {
               href="https://wa.me/6283135183093" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={() => {
+                handleExternalClick();
+                setIsMenuOpen(false);
+              }}
               className="flex items-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium px-4 py-2 rounded-lg transition-colors w-fit"
-              onClick={() => setIsMenuOpen(false)}
             >
               <PhoneCall size={16} />
               <span>WhatsApp</span>
