@@ -1,3 +1,3 @@
 
-# Netlify redirects - catch all routes and redirect to index.html
+# Netlify redirects - serve index.html for all routes (SPA)
 /*    /index.html   200
