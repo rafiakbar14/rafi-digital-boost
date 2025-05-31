@@ -19,31 +19,35 @@ import LpPaket15 from "./pages/LpPaket15";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <HelmetProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/landing-page" element={<LandingPage />} />
-            <Route path="/land" element={<LandingPage />} />
-            <Route path="/web-compro" element={<WebCompro />} />
-            <Route path="/webpaket15juta" element={<WebsiteCompro />} />
-            <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route path="/digital-ads" element={<DigitalAds />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/lppaket15" element={<LpPaket15 />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </HelmetProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  console.log('App component rendering');
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/landing-page" element={<LandingPage />} />
+              <Route path="/land" element={<LandingPage />} />
+              <Route path="/web-compro" element={<WebCompro />} />
+              <Route path="/webpaket15juta" element={<WebsiteCompro />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
+              <Route path="/digital-ads" element={<DigitalAds />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/lppaket15" element={<LpPaket15 />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </HelmetProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

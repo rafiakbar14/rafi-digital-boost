@@ -15,14 +15,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     strictPort: true,
   },
-  base: "/",
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
-  },
   plugins: [
     react(),
     mode === 'development' &&
