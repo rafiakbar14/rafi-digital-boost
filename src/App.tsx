@@ -34,6 +34,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/landing-page" element={<LandingPage />} />
+            <Route path="/land" element={<LandingPage />} />
             <Route path="/web-compro" element={<WebCompro />} />
             <Route path="/webpaket15juta" element={<WebsiteCompro />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
