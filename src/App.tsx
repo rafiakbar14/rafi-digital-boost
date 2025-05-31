@@ -28,9 +28,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/landing-page" element={<LandingPage />} />
             <Route path="/web-compro" element={<WebCompro />} />
             <Route path="/webpaket15juta" element={<WebsiteCompro />} />
             <Route path="/ecommerce" element={<Ecommerce />} />
