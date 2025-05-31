@@ -13,7 +13,9 @@ export default defineConfig(({ mode }) => ({
   preview: {
     port: 8080,
     host: "::",
+    strictPort: true,
   },
+  base: "/",
   build: {
     rollupOptions: {
       output: {
