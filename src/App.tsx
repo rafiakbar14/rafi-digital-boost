@@ -22,6 +22,8 @@ const queryClient = new QueryClient();
 const App = () => {
   console.log('App component rendering');
   console.log('Current pathname:', window.location.pathname);
+  console.log('Current search:', window.location.search);
+  console.log('Current hash:', window.location.hash);
   
   return (
     <QueryClientProvider client={queryClient}>
