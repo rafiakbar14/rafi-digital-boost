@@ -1,12 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,9 +24,21 @@ const Navbar = () => {
   }, []);
 
   const handleSmoothScroll = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname !== '/') {
+      // Navigate to home first then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -56,24 +70,24 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            <a
-              href="/#services"
+            <button
+              onClick={() => handleSmoothScroll('services')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Layanan
-            </a>
-            <a
-              href="/#pricing"
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('pricing')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Harga
-            </a>
+            </button>
             <Link
               to="/portfolio"
               className={cn(
@@ -83,15 +97,15 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <a
-              href="/#about"
+            <button
+              onClick={() => handleSmoothScroll('about')}
               className={cn(
                 "font-medium hover:text-brand-blue transition-colors",
                 isScrolled ? "text-gray-700" : "text-white"
               )}
             >
               Tentang
-            </a>
+            </button>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 
@@ -123,20 +137,18 @@ const Navbar = () => {
           isMenuOpen ? "top-16 opacity-100" : "top-[-400px] opacity-0"
         )}>
           <nav className="container mx-auto py-4 space-y-4 px-4">
-            <a
-              href="/#services"
-              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => handleSmoothScroll('services')}
+              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors w-full text-left"
             >
               Layanan
-            </a>
-            <a
-              href="/#pricing"
-              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button
+              onClick={() => handleSmoothScroll('pricing')}
+              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors w-full text-left"
             >
               Harga
-            </a>
+            </button>
             <Link
               to="/portfolio"
               className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
@@ -144,13 +156,12 @@ const Navbar = () => {
             >
               Portofolio
             </Link>
-            <a
-              href="/#about"
-              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              onClick={() => handleSmoothScroll('about')}
+              className="block font-medium text-gray-700 hover:text-brand-blue transition-colors w-full text-left"
             >
               Tentang
-            </a>
+            </button>
             <a 
               href="https://wa.me/6283135183093" 
               target="_blank" 
