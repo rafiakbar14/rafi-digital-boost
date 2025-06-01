@@ -19,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Telegraf', 'sans-serif'],
+        telegraf: ['Telegraf', 'sans-serif'],
+      },
       colors: {
         brand: {
           blue: "#2563eb",
