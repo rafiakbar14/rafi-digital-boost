@@ -20,8 +20,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Telegraf', 'sans-serif'],
-        telegraf: ['Telegraf', 'sans-serif'],
+        sans: ['Telegraf', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        telegraf: ['Telegraf', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       colors: {
         brand: {
