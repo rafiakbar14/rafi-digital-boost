@@ -13,8 +13,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
     email: '',
     message: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -24,53 +22,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
-    try {
-      // Replace this URL with your actual Google Form action URL
-      // To get this URL: Create a Google Form > Get pre-filled link > Copy the action URL
-      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
-      
-      // Create form data for Google Forms
-      const googleFormData = new FormData();
-      // Replace these entry IDs with your actual Google Form field entry IDs
-      googleFormData.append('entry.YOUR_NAME_ENTRY_ID', formData.name);
-      googleFormData.append('entry.YOUR_EMAIL_ENTRY_ID', formData.email);
-      googleFormData.append('entry.YOUR_MESSAGE_ENTRY_ID', formData.message);
-      
-      // Submit to Google Forms
-      await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        body: googleFormData,
-        mode: 'no-cors' // Required for Google Forms
-      });
-      
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Format pesan untuk WhatsApp
+    const whatsappMessage = `Halo, saya ingin konsultasi tentang jasa website.
+
+Nama: ${formData.name}
+Email: ${formData.email}
+
+Pesan:
+${formData.message}`;
+
+    // Encode pesan untuk URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    
+    // Redirect ke WhatsApp
+    const whatsappUrl = `https://wa.me/6283135183093?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
     <div className={cn("bg-white p-8 rounded-lg shadow-md", className)}>
       <h3 className="text-2xl font-bold mb-6 text-gray-900">Hubungi Kami</h3>
-      
-      {submitStatus === 'success' && (
-        <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-800">Pesan Anda berhasil dikirim! Kami akan segera menghubungi Anda.</p>
-        </div>
-      )}
-      
-      {submitStatus === 'error' && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-800">Terjadi kesalahan. Silakan coba lagi atau hubungi kami via WhatsApp.</p>
-        </div>
-      )}
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -126,35 +103,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
         
         <button
           type="submit"
-          disabled={isSubmitting}
-          className="w-full flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-blue-dark text-white font-medium py-3 px-6 rounded-lg transition-colors"
         >
-          {isSubmitting ? (
-            <>
-              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-              <span>Mengirim...</span>
-            </>
-          ) : (
-            <>
-              <Send size={18} />
-              <span>Kirim Pesan</span>
-            </>
-          )}
+          <Send size={18} />
+          <span>Kirim via WhatsApp</span>
         </button>
       </form>
       
       <div className="mt-6 pt-6 border-t border-gray-200">
         <p className="text-sm text-gray-600 text-center">
-          Atau langsung chat via WhatsApp untuk respon lebih cepat
+          Formulir akan mengarahkan langsung ke WhatsApp dengan pesan yang sudah terformat
         </p>
-        <a 
-          href="https://wa.me/6283135183093?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20jasa%20website" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="block mt-3 text-center text-brand-blue hover:text-brand-blue-dark font-medium transition-colors"
-        >
-          Chat WhatsApp →
-        </a>
       </div>
     </div>
   );

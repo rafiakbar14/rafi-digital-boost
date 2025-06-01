@@ -118,12 +118,9 @@ const Navbar = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Always black like logo */}
           <button 
-            className={cn(
-              "md:hidden transition-colors",
-              isScrolled ? "text-gray-700" : "text-white"
-            )}
+            className="md:hidden text-black transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
