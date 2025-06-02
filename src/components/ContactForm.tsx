@@ -26,13 +26,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className }) => {
     e.preventDefault();
     
     // Format pesan untuk WhatsApp
-    const whatsappMessage = `Halo, saya ingin konsultasi tentang jasa website.
+    const whatsappMessage = `*Halo, saya ingin konsultasi tentang jasa website.*
 
-Nama: ${formData.name}
-Email: ${formData.email}
+*Nama:* ${formData.name}
+*Email:* ${formData.email}
 
-Pesan:
-${formData.message}`;
+*Pesan:*
+${formData.message}
+
+Terima kasih!`;
 
     // Encode pesan untuk URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -112,7 +114,7 @@ ${formData.message}`;
       
       <div className="mt-6 pt-6 border-t border-gray-200">
         <p className="text-sm text-gray-600 text-center">
-          Formulir akan mengarahkan langsung ke WhatsApp dengan pesan yang sudah terformat
+          Pesan akan dikirim ke WhatsApp dengan format yang sudah terstruktur
         </p>
       </div>
     </div>

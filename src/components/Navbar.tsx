@@ -24,20 +24,24 @@ const Navbar = () => {
   }, []);
 
   const handleSmoothScroll = (sectionId: string) => {
+    console.log(`Navigating to section: ${sectionId}, current path: ${location.pathname}`);
+    
     if (location.pathname !== '/') {
       // Navigate to home first then scroll
       navigate('/');
       setTimeout(() => {
         const element = document.getElementById(sectionId);
+        console.log(`Element found: ${element ? 'yes' : 'no'}`);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 100);
+      }, 300);
     } else {
       // Already on home page, just scroll
       const element = document.getElementById(sectionId);
+      console.log(`Element found: ${element ? 'yes' : 'no'}`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
     setIsMenuOpen(false);
@@ -118,7 +122,7 @@ const Navbar = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button - Always black like logo */}
+          {/* Mobile Menu Button - Always black */}
           <button 
             className="md:hidden text-black transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
